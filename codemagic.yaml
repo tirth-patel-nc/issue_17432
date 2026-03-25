@@ -1,7 +1,6 @@
 workflows:
   fvm-workflow:
     name: FVM workflow
-    working_directory: kali
     scripts:
       - name: Install FVM
         script: |
@@ -9,3 +8,6 @@ workflows:
           brew install fvm
           fvm install 3.41.4 
           fvm use 3.41.4 
+      - name: Install dependencies
+        script: |
+          fvm flutter pub get
